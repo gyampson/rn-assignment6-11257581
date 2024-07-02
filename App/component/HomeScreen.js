@@ -37,6 +37,18 @@ const HomeScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
+        <View style={styles.writes}>
+          <Text style={styles.bold}>Office Wear</Text>
+          <Text style={styles.bold1}> Black</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.adjust3}>reversible angora cardigan</Text>
+          <Text style={styles.adjust3}> reversible angora cardigan</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.money}>$120</Text>
+          <Text style={styles.money1}> $120</Text>
+        </View>
         <View style={styles.images}>
           <Image source={dress3} style={styles.pics} />
           <Image source={dress4} />
@@ -46,6 +58,18 @@ const HomeScreen = () => {
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
           </View>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.bold}>Church Wear</Text>
+          <Text style={styles.bold1}>Lamerei</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.adjust3}>reversible angora cardigan</Text>
+          <Text style={styles.adjust3}> reversible angora cardigan</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.money}>$120</Text>
+          <Text style={styles.money1}> $120</Text>
         </View>
         <View style={styles.images}>
           <Image source={dress5} style={styles.pics} />
@@ -57,6 +81,18 @@ const HomeScreen = () => {
             </TouchableOpacity>
           </View>
         </View>
+        <View style={styles.writes}>
+          <Text style={styles.bold}>21WN</Text>
+          <Text style={styles.bold1}> Lopo</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.adjust3}>reversible angora cardigan</Text>
+          <Text style={styles.adjust3}> reversible angora cardigan</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.money}>$120</Text>
+          <Text style={styles.money1}> $120</Text>
+        </View>
         <View style={styles.images}>
           <Image source={dress7} style={styles.pics} />
           <Image source={dress3} />
@@ -66,6 +102,18 @@ const HomeScreen = () => {
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
           </View>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.bold}>21WN</Text>
+          <Text style={styles.bold1}> Lame</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.adjust3}>reversible angora cardigan</Text>
+          <Text style={styles.adjust3}> reversible angora cardigan</Text>
+        </View>
+        <View style={styles.writes}>
+          <Text style={styles.money}>$120</Text>
+          <Text style={styles.money1}> $120</Text>
         </View>
       </ScrollView>
     </View>
@@ -91,6 +139,13 @@ const styles = StyleSheet.create({
   pics: {
     right: 10,
   },
+  writes: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+
+    paddingLeft: 10,
+    paddingRight: 20,
+  },
   header: {
     flexDirection: "row",
     alignContent: "center",
@@ -107,7 +162,18 @@ const styles = StyleSheet.create({
     top: 190,
   },
   button2: {
-    right: 20,
+    right: 25,
     top: 165,
+  },
+  adjust3: {},
+  money1: {
+    right: 120,
+  },
+  bold: {
+    fontWeight: "bold",
+  },
+  bold1: {
+    right: 110,
+    fontWeight: "bold",
   },
 });

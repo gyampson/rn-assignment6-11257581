@@ -24,6 +24,9 @@ const CartScreen = () => {
             <TouchableOpacity onPress={() => alert("Remove from cart")}>
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
+            <Text styles={styles.write1}>OFFICE WEAR</Text>
+            <Text styles={styles.write2}>office wear for your office</Text>
+            <Text styles={styles.write3}>$120</Text>
           </View>
         </View>
         <View style={styles.images}>
@@ -33,6 +36,11 @@ const CartScreen = () => {
             <TouchableOpacity onPress={() => alert("Remove from cart")}>
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
+            <Text styles={styles.write1}>Lameria</Text>
+            <Text styles={styles.write2}>
+              Recycle boucle kinght cadigan pink
+            </Text>
+            <Text styles={styles.write3}>$120</Text>
           </View>
         </View>
         <View style={styles.images}>
@@ -42,7 +50,11 @@ const CartScreen = () => {
             <TouchableOpacity onPress={() => alert("Remove from cart")}>
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
-            <Text>hello</Text>
+            <Text styles={styles.write1}>Church Wear </Text>
+            <Text styles={styles.write2}>
+              Recycle boucle kinght cadigan pink
+            </Text>
+            <Text styles={styles.write3}>$120</Text>
           </View>
         </View>
       </ScrollView>
@@ -59,11 +71,12 @@ const styles = StyleSheet.create({
   },
   button1: {
     top: 190,
-    right: 160,
   },
   images: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    padding: 20,
+
+    padding: 10,
+    height: 250,
+    width: 200,
   },
 });

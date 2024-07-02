@@ -12,12 +12,9 @@ const Menu = require("./assets/Menu.png");
 function MyDrawer() {
   return (
     <Drawer.Navigator>
-      <Drawer.Screen
-        name="Open Fashion"
-        component={HomeScreen}
-        options={{ tabBarIcon: ({ color }) => <Image source={Menu} /> }}
-      />
-      <Drawer.Screen name="Cart" component={CartScreen} />
+      <Drawer.Screen name="Open Fashion" component={HomeScreen} />
+
+      <Drawer.Screen name="Check Out" component={CartScreen} />
     </Drawer.Navigator>
   );
 }

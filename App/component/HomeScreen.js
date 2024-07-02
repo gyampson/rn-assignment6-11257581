@@ -31,7 +31,9 @@ const HomeScreen = () => {
           <Image source={dress2} />
 
           <View>
-            <TouchableOpacity onPress={() => alert("Add to cart")}>
+            <TouchableOpacity
+              onPress={() => alert("Add this item to the cart")}
+            >
               <Image source={add_circle} style={styles.button1} />
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
@@ -53,7 +55,9 @@ const HomeScreen = () => {
           <Image source={dress3} style={styles.pics} />
           <Image source={dress4} />
           <View>
-            <TouchableOpacity onPress={() => alert("Add to cart")}>
+            <TouchableOpacity
+              onPress={() => alert("Add this item to the cart")}
+            >
               <Image source={add_circle} style={styles.button1} />
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
@@ -75,7 +79,9 @@ const HomeScreen = () => {
           <Image source={dress5} style={styles.pics} />
           <Image source={dress6} />
           <View>
-            <TouchableOpacity onPress={() => alert("Add to cart")}>
+            <TouchableOpacity
+              onPress={() => alert("Add this item to the cart")}
+            >
               <Image source={add_circle} style={styles.button1} />
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
@@ -97,7 +103,9 @@ const HomeScreen = () => {
           <Image source={dress7} style={styles.pics} />
           <Image source={dress3} />
           <View>
-            <TouchableOpacity onPress={() => alert("Add to cart")}>
+            <TouchableOpacity
+              onPress={() => alert("Add this item to the cart")}
+            >
               <Image source={add_circle} style={styles.button1} />
               <Image source={add_circle} style={styles.button2} />
             </TouchableOpacity>
@@ -165,9 +173,15 @@ const styles = StyleSheet.create({
     right: 25,
     top: 165,
   },
-  adjust3: {},
+  adjust3: {
+    color: "grey",
+  },
   money1: {
     right: 120,
+    color: "brown",
+  },
+  money: {
+    color: "brown",
   },
   bold: {
     fontWeight: "bold",

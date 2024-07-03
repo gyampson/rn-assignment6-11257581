@@ -1,6 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import "react-native-gesture-handler";
+import { FontDisplay, useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
@@ -9,6 +12,9 @@ import CartScreen from "./component/CartScreen";
 const Drawer = createDrawerNavigator();
 const Logo = require("./assets/Logo.png");
 const Menu = require("./assets/Menu.png");
+const shoppingBag = require("./assets/shoppingBag.png");
+const Search = require("./assets/Search.png");
+SplashScreen.preventAutoHideAsync();
 function MyDrawer() {
   return (
     <Drawer.Navigator>
@@ -21,7 +27,10 @@ function MyDrawer() {
 export default function App() {
   return (
     <NavigationContainer style={styles.container}>
-      <MyDrawer />
+      <ScrollView>
+        <HomeScreen />
+        <CartScreen />
+      </ScrollView>
     </NavigationContainer>
   );
 }
@@ -30,5 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "blue",
+    flexDirection: "row",
+    paddingTop: 20,
   },
 });

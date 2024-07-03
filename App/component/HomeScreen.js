@@ -8,6 +8,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 const dress1 = require("../assets/dress1.png");
 const dress2 = require("../assets/dress2.png");
 const dress3 = require("../assets/dress3.png");
@@ -18,13 +21,45 @@ const dress7 = require("../assets/dress7.png");
 const Menu = require("../assets/Menu.png");
 const remove = require("../assets/remove.png");
 const add_circle = require("../assets/add_circle.png");
+const Filter = require("../assets/Filter.png");
+const Listview = require("../assets/Listview.png");
+const shoppingBag = require("../assets/shoppingBag.png");
+const Logo = require("../assets/Logo.png");
 
+const Search = require("../assets/Search.png");
+import * as Font from "expo-font";
+SplashScreen.preventAutoHideAsync();
 const HomeScreen = () => {
+  const [loaded, error] = useFonts({});
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.font}>Our Story</Text>
+      <View style={styles.headerimg}>
+        <Image source={Search} style={styles.headerimg1} />
+        <Image source={shoppingBag} style={styles.headerimg2} />
+        <Image source={Menu} style={styles.headerimg3} />
+        <Image source={Logo} style={styles.headerimg4} />
       </View>
+      <View style={styles.header}>
+        <Text style={[styles.font, { fontWeight: "thin" }]}>Our Story</Text>
+        <View style={styles.img0}>
+          <Image source={Listview} style={styles.img1} />
+        </View>
+        <View style={styles.img}>
+          <Image source={Filter} style={styles.img2} />
+        </View>
+      </View>
+
       <ScrollView>
         <View style={styles.images}>
           <Image source={dress1} style={styles.pics} />
@@ -136,8 +171,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    paddingTop: 50,
   },
-  font: {},
+
   images: {
     flexDirection: "row",
     justifyContent: "space-evenly",
@@ -147,6 +183,7 @@ const styles = StyleSheet.create({
   pics: {
     right: 10,
   },
+
   writes: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -156,14 +193,51 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    alignContent: "center",
-    justifyContent: "center",
+    paddingTop: 20,
   },
+  headerimg: {
+    flexDirection: "row",
+  },
+  headerimg1: {
+    left: 270,
+  },
+  headerimg2: {
+    left: 290,
+  },
+  headerimg3: {
+    right: 30,
+  },
+  headerimg4: {
+    left: 60,
+  },
+  img: {
+    backgroundColor: "rgb(224, 224, 224)",
+    height: 30,
+    width: 30,
+    borderRadius: 30,
+    left: 180,
+  },
+  img0: {
+    backgroundColor: "rgb(224, 224, 224)",
+    height: 30,
+    width: 30,
+    borderRadius: 30,
+    left: 170,
+  },
+  img1: {
+    left: 5,
+    top: 5,
+  },
+  img2: {
+    left: 5,
+    top: 5,
+  },
+
   font: {
     fontSize: 24,
     fontWeight: "bold",
     color: "blue",
-    left: 100,
+    left: 20,
   },
   button1: {
     right: 200,

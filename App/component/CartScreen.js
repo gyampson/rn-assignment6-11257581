@@ -8,13 +8,23 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+SplashScreen.preventAutoHideAsync();
 const remove = require("../assets/remove.png");
 const dress1 = require("../assets/dress1.png");
 const dress4 = require("../assets/dress4.png");
 const dress3 = require("../assets/dress3.png");
+const Logo = require("../assets/Logo.png");
+const Search = require("../assets/Search.png");
 const CartScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.header1}>
+        <Image source={Search} style={styles.img2} />
+        <Image source={Logo} style={styles.img1} />
+      </View>
       <Text style={styles.header}>Check Out</Text>
       <ScrollView>
         <View style={styles.images}>
@@ -84,10 +94,23 @@ const styles = StyleSheet.create({
   },
   header: {
     fontSize: 20,
-    fontWeight: "bold",
-
+    fontWeight: "condensedBold",
+    paddingTop: 20,
     textAlign: "center",
+    textDecorationLine: "underline",
+    textTransform: "uppercase",
   },
+  header1: {
+    flexDirection: "row",
+    paddingTop: 50,
+  },
+  img1: {
+    left: 120,
+  },
+  img2: {
+    left: 300,
+  },
+
   write1: {
     fontWeight: "bold",
     top: 50,

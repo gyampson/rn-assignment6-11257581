@@ -6,11 +6,14 @@ import {
   ScrollView,
   Button,
   TouchableOpacity,
+  fontFamily,
+  font,
 } from "react-native";
 import React from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 const dress1 = require("../assets/dress1.png");
 const dress2 = require("../assets/dress2.png");
 const dress3 = require("../assets/dress3.png");
@@ -25,7 +28,7 @@ const Filter = require("../assets/Filter.png");
 const Listview = require("../assets/Listview.png");
 const shoppingBag = require("../assets/shoppingBag.png");
 const Logo = require("../assets/Logo.png");
-
+const didotFont = require("../assets/didot.ttf");
 const Search = require("../assets/Search.png");
 import * as Font from "expo-font";
 SplashScreen.preventAutoHideAsync();
@@ -41,6 +44,20 @@ const HomeScreen = () => {
   if (!loaded && !error) {
     return null;
   }
+  const loadFonts = async () => {
+    await Font.loadAsync({
+      didot: didotFont, // Use a unique key here
+    });
+  };
+
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    loadFonts().then(() => setFontsLoaded(true));
+  }, []);
+  if (!fontsLoaded) {
+    return <Text>Loading fonts...</Text>; // Or display a loading indicator
+  }
 
   return (
     <View style={styles.container}>
@@ -51,7 +68,7 @@ const HomeScreen = () => {
         <Image source={Logo} style={styles.headerimg4} />
       </View>
       <View style={styles.header}>
-        <Text style={[styles.font, { fontWeight: "thin" }]}>Our Story</Text>
+        <Text style={[styles.font, { fontWeight: "thin" }]}>OUR STORY</Text>
         <View style={styles.img0}>
           <Image source={Listview} style={styles.img1} />
         </View>
@@ -211,18 +228,18 @@ const styles = StyleSheet.create({
     left: 60,
   },
   img: {
-    backgroundColor: "rgb(224, 224, 224)",
+    backgroundColor: "#f5f5f5",
     height: 30,
     width: 30,
     borderRadius: 30,
-    left: 180,
+    left: 155,
   },
   img0: {
-    backgroundColor: "rgb(224, 224, 224)",
+    backgroundColor: "#f5f5f5",
     height: 30,
     width: 30,
     borderRadius: 30,
-    left: 170,
+    left: 140,
   },
   img1: {
     left: 5,
@@ -236,8 +253,8 @@ const styles = StyleSheet.create({
   font: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "blue",
     left: 20,
+    fontFamily: "didot",
   },
   button1: {
     right: 200,
@@ -249,19 +266,24 @@ const styles = StyleSheet.create({
   },
   adjust3: {
     color: "grey",
+    fontFamily: "didot",
   },
   money1: {
     right: 120,
     color: "brown",
+    fontFamily: "didot",
   },
   money: {
     color: "brown",
+    fontFamily: "didot",
   },
   bold: {
-    fontWeight: "bold",
+    fontWeight: "condensed",
+    fontFamily: "didot",
   },
   bold1: {
     right: 110,
-    fontWeight: "bold",
+    fontWeight: "condensed",
+    fontFamily: "didot",
   },
 });

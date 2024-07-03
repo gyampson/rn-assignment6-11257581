@@ -25,19 +25,19 @@ const CartScreen = () => {
         <Image source={Search} style={styles.img2} />
         <Image source={Logo} style={styles.img1} />
       </View>
-      <Text style={styles.header}>Check Out</Text>
+      <Text style={styles.header}>C H E C K O U T</Text>
       <ScrollView>
         <View style={styles.images}>
           <Image source={dress1} style={styles.pics} />
 
-          <View>
+          <View style={styles.up}>
             <TouchableOpacity
               onPress={() => alert("You are removing this item from the cart")}
             >
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
             <Text style={styles.write1}>OFFICE WEAR</Text>
-            <Text style={styles.write2}>office wear for your office</Text>
+            <Text style={styles.write2}>Office wear for your office</Text>
             <Text style={styles.write3}>$120</Text>
           </View>
         </View>
@@ -50,7 +50,7 @@ const CartScreen = () => {
             >
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
-            <Text style={styles.write1}>Lameria</Text>
+            <Text style={styles.write1}>LAMAREI</Text>
             <Text style={styles.write2}>Recycle Boucle knit Cardigan Pink</Text>
             <Text style={styles.write3}>$120</Text>
           </View>
@@ -64,7 +64,7 @@ const CartScreen = () => {
             >
               <Image source={remove} style={styles.button1} />
             </TouchableOpacity>
-            <Text style={styles.write1}>Church Wear </Text>
+            <Text style={styles.write1}>CHURCH WEAR </Text>
             <Text style={styles.write2}>Recycle Boucle knit Cardigan Pink</Text>
             <Text style={styles.write3}>$120</Text>
           </View>
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    paddingBottom: 20,
   },
   button1: {
     top: 190,
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
   },
   images: {
     flexDirection: "row",
-
+    top: 20,
     padding: 10,
     height: 250,
     width: 200,
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textDecorationLine: "underline",
     textTransform: "uppercase",
+    fontFamily: "didot",
   },
   header1: {
     flexDirection: "row",
@@ -112,21 +114,24 @@ const styles = StyleSheet.create({
   },
 
   write1: {
-    fontWeight: "bold",
-    top: 50,
+    fontWeight: "condensed",
+
     fontSize: 15,
-    left: 20,
+    left: 10,
     color: "grey",
+    fontFamily: "didot",
   },
   write2: {
     color: "grey",
-    top: 50,
-    left: 20,
+
+    left: 10,
     fontSize: 11,
+    fontFamily: "didot",
   },
   write3: {
     color: "brown",
-    top: 50,
-    left: 20,
+
+    left: 10,
+    fontFamily: "didot",
   },
 });

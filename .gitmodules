@@ -1,6 +1,0 @@
-[submodule "myApp"]
-	path = myApp
-	url = https://github.com/gyampson/rn-assignment7-11257581.git
-[submodule "App/App"]
-	path = App/App
-	url = https://github.com/gyampson/rn-assignment7-11257581.git
